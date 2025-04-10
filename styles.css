@@ -1,0 +1,775 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tajawal', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+
+:root {
+    --primary: #3498db;
+    --secondary: #267d49;
+    --accent: #267d49;
+    --light: #f8f9fa;
+    --dark: #267d49;
+    --text: #333;
+    --gray: #267d49;
+    --kurdish-green: #267d49;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    --primary-color: #3498db;
+    --accent-color: #e74c3c;
+    --dark-color: #267d49;
+    /*لون السعر */
+    --text-light: #7f8c8d;
+}
+
+body {
+    background: var(--light);
+    color: var(--text);
+    line-height: 1.7;
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* تحسينات عامة */
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 36px;
+    color: var(--dark);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+.section-title h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+    width: 80px;
+    height: 3px;
+    background: var(--primary);
+}
+
+.section-title p {
+    color: var(--gray);
+    max-width: 700px;
+    margin: 15px auto 0;
+}
+
+.kurdistan-title h2 {
+    color: var(--kurdish-green);
+}
+
+.kurdistan-title h2:after {
+    background: var(--kurdish-green);
+}
+
+/* بطاقات الوجهات */
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.destination-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+
+.destination-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.destination-img {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.destination-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.kurdistan-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--kurdish-green);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.destination-card:hover .destination-img img {
+    transform: scale(1.1);
+}
+
+.destination-info {
+    padding: 20px;
+}
+
+.destination-info h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.destination-info p {
+    color: var(--gray);
+    margin-bottom: 15px;
+}
+
+.destination-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.feature {
+    background: rgba(52, 152, 219, 0.1);
+    color: var(--primary);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.kurdistan-feature {
+    background: rgba(46, 139, 87, 0.1);
+    color: var(--kurdish-green);
+}
+
+.destination-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background: var(--secondary);
+    transform: translateY(-3px);
+}
+
+.btn-kurdistan {
+    background: var(--kurdish-green);
+}
+
+.btn-kurdistan:hover {
+    background: #267d49;
+}
+
+/* تنسيقات عامة */
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.logo span {
+    color: #3498db;
+}
+
+/* تنسيق القسم الرئيسي */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* قسم العروض والخصومات */
+.offers-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.offer-card {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    position: relative;
+    transition: var(--transition);
+    background: white;
+}
+
+.offer-card:hover {
+    transform: translateY(-10px);
+}
+
+.offer-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    z-index: 1;
+}
+
+.offer-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.offer-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.offer-card:hover .offer-image img {
+    transform: scale(1.1);
+}
+
+.offer-content {
+    padding: 1.5rem;
+    background-color: white;
+}
+
+.offer-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+}
+
+.offer-description {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.offer-price {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.current-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: var(--text-light);
+    margin-left: 1rem;
+}
+
+.offer-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* معرض الصور */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    transform: translateY(100%);
+    transition: var(--transition);
+}
+
+.gallery-item:hover .gallery-caption {
+    transform: translateY(0);
+}
+
+/* التصميم المتجاوب */
+@media (max-width: 768px) {
+    .section {
+        padding: 60px 0;
+    }
+    
+    .section-title h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-title h2 {
+        font-size: 28px;
+    }
+    
+    .destinations-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .offers-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+
+
+
+/* تنسيقات قسم آراء المسافرين */
+.testimonials-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.testimonial {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 25px;
+    transition: var(--transition);
+}
+
+.testimonial:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.testimonial-content {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text);
+    margin-bottom: 20px;
+    position: relative;
+    padding-right: 20px;
+}
+
+.testimonial-content:before {
+    content: '"';
+    font-size: 60px;
+    position: absolute;
+    right: -5px;
+    top: -25px;
+    color: rgba(52, 152, 219, 0.1);
+    font-family: serif;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.testimonial-author img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary);
+}
+
+.author-info h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: var(--dark);
+}
+
+.author-info p {
+    font-size: 14px;
+    color: var(--gray);
+    margin-bottom: 8px;
+}
+
+.rating {
+    color: #FFD700; /* لون النجوم الذهبي */
+    font-size: 14px;
+}
+
+/* التصميم المتجاوب */
+@media (max-width: 768px) {
+    .testimonials-container
+   } 
+   
+   /* أنماط نظام الحجز */
+.booking-form {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--dark);
+    text-align: right;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.destination-options {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.radio-option input {
+    margin-left: 8px;
+}
+
+.radio-option span {
+    padding: 10px 20px;
+    background: #f5f5f5;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.radio-option input:checked + span {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    background: var(--kurdish-green);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background: #267d49;
+}
+
+/* التصميم المتجاوب */
+@media (max-width: 768px) {
+    .booking-form {
+        padding: 20px;
+    }
+    
+    .destination-options {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .radio-option {
+        justify-content: flex-end;
+    }
+}
+/* نظام الإحالة والنقاط */
+.referral-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.referral-card {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 30px;
+    text-align: center;
+}
+
+.referral-header {
+    margin-bottom: 20px;
+}
+
+.referral-header h3 {
+    color: var(--dark);
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.points-display {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--kurdish-green);
+}
+
+.points-display span {
+    color: var(--primary);
+}
+
+.progress-container {
+    height: 15px;
+    background: #f0f0f0;
+    border-radius: 10px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: var(--kurdish-green);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.referral-stats {
+    margin: 20px 0;
+    font-size: 16px;
+    color: var(--text-light);
+}
+
+.referral-stats span {
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.referral-link-box {
+    margin: 25px 0;
+    text-align: right;
+}
+
+.referral-link-box label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--dark);
+}
+
+.link-container {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.link-container input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.btn-copy {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-copy:hover {
+    background: var(--secondary);
+}
+
+.reward-message {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin: 25px 0;
+    border: 1px dashed var(--kurdish-green);
+}
+
+.reward-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.reward-message h4 {
+    color: var(--kurdish-green);
+    margin-bottom: 10px;
+}
+
+.btn-reward {
+    background: var(--kurdish-green);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: var(--border-radius);
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.btn-reward:hover {
+    background: #267d49;
+    transform: translateY(-3px);
+}
+
+.btn-share {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    color: var(--text);
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    margin: 0 5px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-share:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.btn-share i {
+    font-size: 18px;
+}
+
+.btn-share:first-child {
+    color: #3b5998;
+    border-color: #3b5998;
+}
+
+.btn-share:last-child {
+    color: #25D366;
+    border-color: #25D366;
+}
+
+.hidden {
+    display: none;
+}
